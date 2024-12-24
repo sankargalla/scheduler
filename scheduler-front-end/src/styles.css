@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "primeicons/primeicons.css";
+
+html,
+body{
+    height: 100%;
+    margin: 0;
+}
+.container {
+    width: 500px;
+    height: auto;
+    margin-top: 10%;
+    margin-left: 500px;
+  }
+  .header-center{
+    margin-left: 40%;
+  }
+  
+.input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+.button-center {
+    background-color: #706cbd;
+    border: none;
+    color: white;
+    padding: 12px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 40%;
+  }
+ .p-error{
+  color: red;
+ }
+ .full-container {
+  display: flex;
+  height: 100vh; /* Make the container fill the screen height */
+  align-items: stretch; /* Make child elements stretch to fill height */
+}
+
+.full-screen-divider {
+  height: 100%; /* Set the divider height to 100% of the container */
+
+}

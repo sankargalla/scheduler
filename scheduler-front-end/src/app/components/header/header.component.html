@@ -1,0 +1,17 @@
+<div class="header-container">
+    <div class="header-content">
+      <div class="profile-wrapper" *ngIf="user">
+        <div class="dropdown">
+          <button class="dropbtn">{{ user.fullName }}</button>
+          <div class="dropdown-content">
+            <a (click)="logout()">Logout</a>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!user" class="guest-message">
+        <p>Welcome, Guest!</p>
+        <a routerLink="/login">Login</a>
+      </div>
+    </div>
+  </div>
+  

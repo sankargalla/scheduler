@@ -1,0 +1,27 @@
+    <app-header></app-header>
+    <p-divider layout="horizontal" class="full-screen-divider"></p-divider>
+    <div class="full-container">
+        <div>
+        <div>
+            <app-request-schedule></app-request-schedule>
+        </div>
+        <div style="padding-top: 5%;">
+            <p-button [disabled]="!isFridayOrLater" > Next week schedule</p-button>
+        </div>
+        <div [hidden]="isFridayOrLater">
+            <p> Next week schedule will be available from Friday!!</p>
+        </div>
+    </div>
+        
+
+        <p-divider layout="vertical" class="full-screen-divider"></p-divider>
+       
+        <div>
+            <p-scrollPanel [style]="{ width: '100%', height: '90%' }">          
+            <p-card>
+                <app-current-week-schedule></app-current-week-schedule>
+            </p-card>
+            </p-scrollPanel>
+        </div>
+    </div>
+    

@@ -1,0 +1,26 @@
+<form [formGroup]="loginForm" class="container" (ngSubmit)="submitUserLogin()">
+  <div>
+    <h2 class="header-center"> Login </h2>
+  </div>
+  <p-toast></p-toast>
+  <div>
+    <label for="email">Email</label>
+    <input class="input" type="text" id="email" name="email" formControlName="email" placeholder="Enter your email">
+    <small *ngIf=" email.invalid && (email.dirty || email.touched)" 
+    class="p-error">
+      <div *ngIf="email.errors?.['required']">Email is required.</div>
+      <div *ngIf="email.errors?.['email']">Enter valid email.</div>
+    </small>
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input class="input" type="password" id="password" name="password" formControlName="password" placeholder="Enter password">
+    <small *ngIf=" password.invalid && (password.dirty || password.touched)" class="p-error">
+      <div *ngIf="password.errors?.['required']">Password is required.</div>
+    </small>
+  </div>
+ <div>
+  <button type ="submit" class="button-center" [disabled]="loginForm.invalid">Submit</button>
+  <div class="mt-2">Not a member? <a routerLink="/register">Register</a></div>
+ </div>
+</form>

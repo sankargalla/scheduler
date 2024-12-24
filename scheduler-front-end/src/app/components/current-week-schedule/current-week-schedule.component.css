@@ -1,0 +1,42 @@
+.calendar-container {
+  text-align: center;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.calendar-table th,
+.calendar-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.shift-header {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.shift-column {
+  background-color: #f8f9fa;
+}
+
+.shift-slot {
+  background-color: #d4edda; /* Green background for shifts */
+  color: #155724; /* Darker green text for visibility */
+  border: 1px solid #c3e6cb; /* Border to match the background */
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.time-slot {
+  padding: 5px;
+}
+
+.shift-time {
+  background-color: #068b23; /* Green background for shifts */
+ 
+}

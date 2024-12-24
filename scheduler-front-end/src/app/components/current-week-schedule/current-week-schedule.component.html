@@ -1,0 +1,28 @@
+<div class="calendar-container">
+  <div>
+  <h2 style="text-align: center;">Current Week Schedule</h2>
+  </div>
+  <table class="calendar-table">
+    <thead>
+      <tr>
+        <th class="shift-header">Shifts</th>
+        <th *ngFor="let day of daysOfWeek">{{ day.dayName }}<br>{{ day.formattedDate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let time of timeSlots">
+        <!-- Shift Column -->
+        <td class="shift-column" >
+          <ng-container *ngFor="let shift of shifts">
+            <div *ngIf="shift.time === time.time">
+              <span>{{ time.time }}</span>
+            </div>
+          </ng-container>
+        </td>
+        <!-- Days of the Week -->
+        <td *ngFor="let day of daysOfWeek" [ngClass]="{'shift-time': isShiftTime(day, time.time)}">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

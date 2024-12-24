@@ -1,0 +1,46 @@
+<p-card header="Request Schedule" class="request_schedule" id="requestScheduleComponent">
+    <div style="text-align: right; padding-top: 20px;">
+        <p-button (click)="addShiftComponent()">
+            Add Shift
+        </p-button>
+
+    </div>
+    <div *ngIf="shiftComponents.length > 0">
+        <div *ngFor="let shift of shiftComponents; let i = index" class="shift_component">
+            <div style="text-align: left;">
+                <p>Shift {{ i+1 }}</p>
+            </div>
+            <div>
+                <p-calendar 
+                    [(ngModel)]="shift.date1" 
+                    [ngModelOptions]="{ standalone: true }"
+                    name="date1_{{i}}" 
+                    [iconDisplay]="'input'" 
+                    [showIcon]="true" 
+                    inputId="icondisplay_{{i}}"
+                    [placeholder]="'Date'">
+                </p-calendar>
+          
+                <p-dropdown 
+                    [(ngModel)]="shift.date2" 
+                    [ngModelOptions]="{ standalone: true }"
+                    [options]="timeOptions" 
+                    [placeholder]="'From'">
+                </p-dropdown>
+          
+                <p-dropdown 
+                    [(ngModel)]="shift.date3" 
+                    [ngModelOptions]="{ standalone: true }"
+                    [options]="timeOptions" 
+                    [placeholder]="'To'">
+                </p-dropdown>
+                 <p-button icon="pi pi-minus" (click)="removeShiftComponent(i)"/>
+            </div>
+        </div>
+        <div style="text-align: center; padding-top: 20px;">
+            <p-button (click)="submitShifts()">
+                Submit
+            </p-button>
+        </div>
+    </div>
+</p-card>
